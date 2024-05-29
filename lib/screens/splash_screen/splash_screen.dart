@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
             bottom: 30.0,
             right: 20.0,
             child: Text(
-              'App $_appName'
+              'Apps $_appName'
               'Version $_version',
               style: const TextStyle(
                 color: Colors.white,
