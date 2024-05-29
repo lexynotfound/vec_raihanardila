@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   String _version = '';
+  String _appName = '';
 
   @override
   void initState() {
@@ -32,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _getVersion() async {
     final packageInfo = await PackageInfo.fromPlatform();
     setState(() {
+      _appName = packageInfo.appName;
       _version = packageInfo.version;
     });
   }
@@ -63,6 +65,7 @@ class _SplashScreenState extends State<SplashScreen> {
             bottom: 30.0,
             right: 20.0,
             child: Text(
+              'App $_appName'
               'Version $_version',
               style: const TextStyle(
                 color: Colors.white,
